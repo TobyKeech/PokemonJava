@@ -16,11 +16,13 @@ public class Water extends Pokemon implements IAttackable {
 
     @Override
     public void normalAttack(Pokemon pokemon) {
-
+        int health = (pokemon.getHp() - 25);
+        pokemon.setHp(health);
     }
 
     @Override
     public void superAttack(Pokemon pokemon) {
-
+        int health = (pokemon.getHp() - 50);
+        pokemon.setHp(health);
     }
 }

@@ -48,4 +48,38 @@ public class TestPokemon {
         assertEquals(150, fire.getHp());
     }
 
+    @Test
+    public void pokemonNormalAttack(){
+        fairy.normalAttack(fire);
+        assertEquals(135, fire.getHp());
+    }
+
+    @Test
+    public void pokemonSuperAttack(){
+        fairy.superAttack(fire);
+        assertEquals(110, fire.getHp());
+    }
+
+    @Test
+    public void pokemonCanBaseDefend(){
+        fairy.superAttack(fire);
+        fire.baseDefend(fire);
+        assertEquals(120, fire.getHp());
+    }
+
+    @Test
+    public void pokemonCanNormalDefend(){
+        fairy.superAttack(fire);
+        fire.normalDefend(fire);
+        assertEquals(130, fire.getHp());
+    }
+
+    @Test
+    public void pokemonCanSuperDefend(){
+        fairy.superAttack(fire);
+        fire.superDefend(fire);
+        assertEquals(160, fire.getHp());
+    }
+
+
 }

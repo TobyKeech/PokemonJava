@@ -22,5 +22,7 @@ public class Fairy extends Pokemon implements IAttackable {
 
     @Override
     public void superAttack(Pokemon pokemon) {
+        int health = (pokemon.getHp() - 50);
+        pokemon.setHp(health);
     }
 }

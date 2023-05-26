@@ -1,6 +1,10 @@
 package behaviours;
 
+import Pokemons.Pokemon;
+
 public interface IDefendable {
 
-    int defend();
+    void baseDefend(Pokemon pokemon);
+    void normalDefend(Pokemon pokemon);
+    void superDefend(Pokemon pokemon);
 }
