@@ -53,4 +53,5 @@ public class TestTrainer {
     public void canChoosePokemonT2(){
         assertEquals("Toby: Charazard I choose you!", trainer2.choosePokemon(fire));
     }
+
 }
