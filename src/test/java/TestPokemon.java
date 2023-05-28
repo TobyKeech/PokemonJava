@@ -55,12 +55,18 @@ public class TestPokemon {
     }
 
     @Test
-    public void pokemonSuperAttack(){
+    public void pokemonSuperAttackOnWeakType(){
         fire.superAttack(water);
-        assertEquals(40, water.getHp());
+        assertEquals(50, water.getHp());
     }
 
     @Test
+    public void pokemonSuperAttack() {
+        fire.superAttack(fairy);
+        assertEquals(60, fairy.getHp());
+    }
+
+        @Test
     public void pokemonCanBaseDefend(){
         fairy.superAttack(fire);
         fire.baseDefend(fire);

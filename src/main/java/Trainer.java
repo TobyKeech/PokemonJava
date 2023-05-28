@@ -29,8 +29,9 @@ public class Trainer {
     }
 
     public String choosePokemon(Pokemon pokemon){
-         System.out.println(pokemon.getName() + " I choose you!");
-         return this.name + ": "  + pokemon.getName() + " I choose you!";
+        String message = String.format("%s: %s I choose you!", this.name, pokemon.getName());
+        System.out.println(message);
+        return message;
     }
 
 }
