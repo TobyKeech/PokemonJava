@@ -44,20 +44,20 @@ public class TestPokemon {
 
     @Test
     public void pokemonCanAttack(){
-        water.baseAttack(fire);
-        assertEquals(150, fire.getHp());
+        fire.normalAttack(water);
+        assertEquals(50, water.getHp());
     }
 
     @Test
-    public void pokemonNormalAttack(){
-        fairy.normalAttack(fire);
-        assertEquals(135, fire.getHp());
+    public void pokemonbaseAttack(){
+        fire.baseAttack(water);
+        assertEquals(65, water.getHp());
     }
 
     @Test
     public void pokemonSuperAttack(){
-        fairy.superAttack(fire);
-        assertEquals(110, fire.getHp());
+        fire.superAttack(water);
+        assertEquals(40, water.getHp());
     }
 
     @Test
