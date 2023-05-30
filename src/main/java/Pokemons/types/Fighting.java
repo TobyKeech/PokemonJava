@@ -4,36 +4,35 @@ import Pokemons.Pokemon;
 import behaviours.IAttackable;
 import behaviours.IDefendable;
 
-public class Water extends Pokemon implements IAttackable, IDefendable {
-    public Water(String name, int hp, String type) {
+public class Fighting extends Pokemon implements IAttackable, IDefendable {
+    public Fighting(String name, int hp, String type) {
         super(name, hp, type);
     }
 
     @Override
     public void baseAttack(Pokemon pokemon) {
         String type = pokemon.getType();
-        int damage = type.equals("water") ? 25 : (type.equals("grass") ? 20 : 10);
+        int damage = type.equals("normal") ? 25 : (type.equals("rock") ? 20 : 10);
         pokemon.setHp(pokemon.getHp() - damage);
     }
 
     @Override
     public void normalAttack(Pokemon pokemon) {
         String type = pokemon.getType();
-        int damage = type.equals("water") ? 40 : (type.equals("grass") ? 35 : 30);
+        int damage = type.equals("normal") ? 40 : (type.equals("rock") ? 35 : 30);
         pokemon.setHp(pokemon.getHp() - damage);
     }
 
     @Override
     public void superAttack(Pokemon pokemon) {
         String type = pokemon.getType();
-        int damage = type.equals("water") ? 50 : (type.equals("grass") ? 40 : 35);
+        int damage = type.equals("normal") ? 50 : (type.equals("rock") ? 40 : 35);
         pokemon.setHp(pokemon.getHp() - damage);
     }
 
     @Override
     public void baseDefend(Pokemon pokemon) {
-        int defencePower = 10;
-        pokemon.setHp(getHp()+defencePower);
+
     }
 
     @Override

@@ -14,7 +14,13 @@ public class TestPokemon {
 
     Rock rock;
 
+    Grass grass;
+
     Normal normal;
+
+    Poison poison;
+
+    Fighting fighting;
 
     @Before
     public void setUp(){
@@ -23,6 +29,11 @@ public class TestPokemon {
         rock = new Rock("Onix", 100, "rock");
         water = new Water("Sqirtle", 100, "water");
         normal = new Normal("Evie", 100, "normal");
+        grass = new Grass("Bulbasor", 100, "grass");
+        poison = new Poison("Beedrill", 100, "poison");
+        fighting = new Fighting("Machamp", 100, "fighting");
+
+
 
     }
 
@@ -45,13 +56,13 @@ public class TestPokemon {
     @Test
     public void pokemonCanAttack(){
         fire.normalAttack(water);
-        assertEquals(50, water.getHp());
+        assertEquals(60, water.getHp());
     }
 
     @Test
     public void pokemonbaseAttack(){
         fire.baseAttack(water);
-        assertEquals(65, water.getHp());
+        assertEquals(75, water.getHp());
     }
 
     @Test
@@ -70,21 +81,39 @@ public class TestPokemon {
     public void pokemonCanBaseDefend(){
         fairy.superAttack(fire);
         fire.baseDefend(fire);
-        assertEquals(120, fire.getHp());
+        assertEquals(135, fire.getHp());
     }
 
     @Test
     public void pokemonCanNormalDefend(){
         fairy.superAttack(fire);
         fire.normalDefend(fire);
-        assertEquals(130, fire.getHp());
+        assertEquals(145, fire.getHp());
     }
 
     @Test
     public void pokemonCanSuperDefend(){
         fairy.superAttack(fire);
         fire.superDefend(fire);
-        assertEquals(160, fire.getHp());
+        assertEquals(175, fire.getHp());
+    }
+
+    @Test
+    public void canAttackOnPokemon(){
+        water.superAttack(grass);
+        assertEquals(60, grass.getHp());
+    }
+
+    @Test
+    public void fairyCanBeAttacked(){
+        poison.baseAttack(fairy);
+        assertEquals(80, fairy.getHp());
+    }
+
+    @Test
+    public void fairyCanAttackedFighting(){
+        fairy.normalAttack(fighting);
+        assertEquals(65, fighting.getHp());
     }
 
 
